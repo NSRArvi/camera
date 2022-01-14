@@ -83,9 +83,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            binding.captureIv.setImageBitmap(imageBitmap);
+            binding.captureIv.setImageURI(Uri.parse(currentPhotoPath));
         }
     }
 
